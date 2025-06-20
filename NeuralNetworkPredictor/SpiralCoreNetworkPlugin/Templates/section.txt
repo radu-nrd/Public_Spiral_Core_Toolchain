@@ -1,0 +1,17 @@
+﻿ <button class="accordion">$$FILE_NAME$$</button>
+    <div class="panel">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Input</th>
+                    <th>Prediction</th>
+                    <th>Real Value</th>
+                    <th>Deviation</th>
+                </tr>
+            </thead>
+            <tbody>
+               $$DATA_ENTRY_LIST$$
+            </tbody>
+        </table>
+    </div>

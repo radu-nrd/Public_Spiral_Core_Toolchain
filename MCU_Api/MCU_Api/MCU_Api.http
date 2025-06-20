@@ -1,0 +1,11 @@
+@MCU_Api_HostAddress = https://localhost:5001
+
+GET {{MCU_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{MCU_Api_HostAddress}}/MCUs/Medical
+Accept: application/json
+
+###

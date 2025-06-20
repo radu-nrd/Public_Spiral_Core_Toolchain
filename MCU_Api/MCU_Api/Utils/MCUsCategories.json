@@ -1,0 +1,32 @@
+[
+  {
+    "ID": 0,
+    "Description": "Microcontrollers used in automation, process control systems, industrial equipment, and robust sensor networks. Ex: motor controllers, PLCs, industrial sensors.",
+    "CategoryName": "Industrial"
+  },
+  {
+    "ID": 1,
+    "Description": "Designed for portable or stationary medical devices requiring high precision and low power consumption. Ex: pulse oximeters, ECG monitors, insulin pumps.",
+    "CategoryName": "Medical"
+  },
+  {
+    "ID": 2,
+    "Description": "MCUs built for reliability in harsh conditions, suitable for vehicle systems and real-time safety-critical tasks. Ex: ABS controllers, airbags, ECUs, infotainment systems.",
+    "CategoryName": "Automotive"
+  },
+  {
+    "ID": 3,
+    "Description": "Optimized for connectivity, power efficiency, and compact size, ideal for smart and interconnected devices. Ex: smart home sensors, Wi-Fi/BLE modules, IoT nodes.",
+    "CategoryName": "IoT"
+  },
+  {
+    "ID": 4,
+    "Description": "Used in everyday electronic devices where low cost, compactness, and fast integration are key. Ex: appliances, remote controls, digital watches, toys.",
+    "CategoryName": "Consumer"
+  },
+  {
+    "ID": 5,
+    "Description": "Ultra-low power microcontrollers tailored for compact, battery-powered devices worn on the body. Ex: fitness trackers, smartwatches, health monitors.",
+    "CategoryName": "Wearable"
+  }
+]

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>..\..\Build\__builder</BaseOutputPath>
+	<OutputPath>..\..\Build\__builder</OutputPath>
+	 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="options.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+	
+	<!--<Target Name="CleanUnwantedFiles" AfterTargets="Build">
+		<ItemGroup>
+			<UnwantedFiles Include="$(OutputPath)*" Exclude="$(OutputPath)*.exe;$(OutputPath)*.dll"/>
+		</ItemGroup>
+		<Delete Files="@(UnwantedFiles)" />
+	</Target>-->
+
+
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+	  <BaseOutputPath>..\..\Build\Plugins</BaseOutputPath>
+	  <OutputPath>..\..\Build\Plugins</OutputPath>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="ISpiralCoreNetworkPluginInterface">
+			<HintPath>..\..\Build\lib\ISpiralCoreNetworkPluginInterface.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.104.2" />
+	</ItemGroup>
+
+</Project>

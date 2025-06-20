@@ -1,0 +1,83 @@
+﻿.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width:90%;
+    margin: 0 auto;
+}
+
+.data-card {
+    background: rgba(0, 174, 255, 0.08);
+    border: 1px solid rgba(0, 174, 255, 0.2);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 174, 255, 0.15);
+    backdrop-filter: blur(4px);
+    min-height: 180px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 174, 255, 0.4);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.page-link {
+    background-color: rgba(0, 174, 255, 0.2);
+    color: white !important;
+    border: 1px solid rgba(0, 174, 255, 0.5);
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.page-link:hover {
+    background-color: rgba(0, 174, 255, 0.35);
+}
+
+.data-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    text-shadow: 0 0 4px rgba(0, 174, 255, 0.4);
+    width: 100%;
+    text-align: center;
+}
+
+.data-desc {
+    font-size: 13px;
+    color: #aadfff;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.data-card:hover .data-desc {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+}

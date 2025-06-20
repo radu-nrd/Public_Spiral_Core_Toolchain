@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SpiralCoreProject.Models.IGenericModel>
+@{
+    var currentPage = (int)ViewBag.CurrentPage;
+    var totalPages = (int)ViewBag.TotalPages;
+}
+
+<div class="data-grid">
+    @foreach (var item in Model)
+    {
+        <a class="data-card" href="/MCUs/@item.CategoryName/@item.ID">
+            <div class="data-title">@item.Title</div>
+            <div class="data-desc">@item.Description</div>
+        </a>
+    }
+</div>
+
+<div class="pagination">
+    @{
+        if (currentPage > 1)
+        {
+            var nextPageLink = Context.Request.Path + Context.Request.QueryString;
+            nextPageLink = !nextPageLink.Contains("page=") ? nextPageLink + $"&page={currentPage-1}" : nextPageLink.Replace($"page={currentPage}", $"page={currentPage - 1}");
+            <a class="page-link" href="@nextPageLink">Previous</a>
+        }
+    }
+
+
+    <span>Page @currentPage of @totalPages</span>
+
+    @{
+        if (currentPage < totalPages)
+        {
+            var nextPageLink = Context.Request.Path + Context.Request.QueryString;
+            nextPageLink = !nextPageLink.Contains("page=") ? nextPageLink + $"&page={currentPage + 1}" : nextPageLink.Replace($"page={currentPage}", $"page={currentPage + 1}");
+            <a class="page-link" href="@nextPageLink">Next</a>
+        }
+    }
+</div>

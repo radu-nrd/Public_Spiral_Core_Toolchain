@@ -1,0 +1,159 @@
+﻿body {
+    background-image: url(/images/body_background.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:70%;
+    margin:0 auto;
+    /*height:97vh;*/
+}
+
+.spiralCoreMenu_notMobile {
+    height: 150px;
+    padding: 0 1%;
+    position: relative;
+    /*background-color: #001121;*/
+    /*background: rgba(0, 17, 33, 0.7);*/ /* negru cu opacitate 50% */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spiralCoreMenu_notMobile #spiralCoreImg {
+    width: auto;
+    height: 100%;
+    display:block;
+    background-image:url(/images/spiral_core_logoo.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+    text-decoration:none;
+    width:150px;
+}
+
+.spiralCoreMenu_notMobile .controls {
+    height: 100%;
+    display: flex;
+}
+
+.spiralCoreMenu_notMobile .controls .menuButton {
+    color: white !important;
+    padding: 10px 22px;
+    margin-left: 12px;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.spiralCoreMenu_notMobile .menuButton:hover {
+    background-color: rgba(0, 174, 255, 0.08);
+    border: 1px solid rgba(0, 174, 255, 0.3);
+    box-shadow: 0 0 12px rgba(0, 174, 255, 0.15);
+    color: #00aeff;
+}
+
+.main {
+    background: rgba(0, 17, 33, 0.7);
+    height: 100%;
+    box-shadow: -10px 0 20px rgba(0, 174, 255, 0.4), 10px 0 20px rgba(0, 174, 255, 0.4), 0 0 25px rgba(0, 174, 255, 0.2);
+}
+.mobile_layout{
+    display:none;
+}
+
+.non_mobile_layout{
+    display:block;
+}
+
+.copyright{
+    color:white;
+    font-size:16px;
+    text-align:center;
+    padding-bottom:20px;
+}
+
+@media (max-width: 768px) {
+
+    .non_mobile_layout {
+        display: none;
+    }
+
+    .mobile_layout{
+        display:block;
+    }
+
+    body {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .spiralCoreMenu_mobile {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        background-color: #001121;
+    }
+
+    .spiralCoreMenu_mobile #spiralCoreImg {
+        height: 80px;
+    }
+
+    .mobile_layout .controls {
+        color: white;
+        background-color: #001121;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    .mobile_layout .controls.active {
+        max-height: 500px;
+        opacity:1;
+    }
+
+    .mobile_layout .controls .menuButton {
+        width: 100%;
+        display:block;
+        text-decoration:none;
+        color:white;
+        padding: 15px;
+        font-size: 15px;
+        font-weight:bold;
+        text-align:center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile_layout .menu-toggle {
+        display: block;
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 80px;
+    }
+
+    .mobile_layout .menu-toggle:hover {
+        background-color: rgba(0, 174, 255, 0.4);
+    }
+
+    .main {
+        box-shadow: -5px 0 10px rgba(0, 174, 255, 0.4), 5px 0 10px rgba(0, 174, 255, 0.4), 0 0 12.5px rgba(0, 174, 255, 0.2);
+        padding-bottom:200px;
+    }
+
+    .content_container {
+       margin-top:200px;
+    }
+}

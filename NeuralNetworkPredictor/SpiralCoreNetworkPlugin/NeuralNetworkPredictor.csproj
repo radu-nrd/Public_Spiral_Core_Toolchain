@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+	  <BaseOutputPath>..\..\Build\Plugins</BaseOutputPath>
+	  <OutputPath>..\..\Build\Plugins</OutputPath>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="ISpiralCoreNetworkPluginInterface">
+			<HintPath>..\..\Build\lib\ISpiralCoreNetworkPluginInterface.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.104.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Templates\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Templates\data_entry.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Templates\full_template.html">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Templates\full_template_dynamic.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Templates\section.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>

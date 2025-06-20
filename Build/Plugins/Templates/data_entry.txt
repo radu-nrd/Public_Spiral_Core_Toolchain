@@ -1,0 +1,7 @@
+﻿<tr>
+    <td>$$ROW_ID$$</td>
+    <td>$$INPUT_DATA$$</td>
+    <td>$$PREDICTION_DATA$$</td>
+    <td>$$REAL_VALUE_DATA$$</td>
+    <td class="$$DEVIATION_CLASS_TAG$$">$$DEVIATION_DATA$$</td>
+</tr>

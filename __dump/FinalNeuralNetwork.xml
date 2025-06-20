@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FinalNeuralNetwork</name>
+    </assembly>
+    <members>
+        <member name="T:FinalNeuralNetwork.Interfaces.INeuralNetwork">
+            <summary>
+            Base Interface of a Neural Network Model
+            </summary>
+        </member>
+        <member name="P:FinalNeuralNetwork.Interfaces.INeuralNetwork.Error">
+            <summary>
+            Error of network for specific data after train.
+            </summary>
+        </member>
+        <member name="P:FinalNeuralNetwork.Interfaces.INeuralNetwork.IsBuilt">
+            <summary>
+            True if neural network is connected, False otherwise.
+            </summary>
+        </member>
+        <member name="P:FinalNeuralNetwork.Interfaces.INeuralNetwork.OutputSize">
+            <summary>
+            Get output neurons count.
+            </summary>
+        </member>
+        <member name="P:FinalNeuralNetwork.Interfaces.INeuralNetwork.GpuSetup">
+            <summary>
+            Get the GPU Setup.
+            </summary>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.AppendLayer(System.Int32,FinalNeuralNetwork.Interfaces.LayerType)">
+            <summary>
+            Append layer to the network. Biases of neurons will be created randomly
+            </summary>
+            <param name="neuronsCount">Number of neurons that layer should contain</param>
+            <param name="layerType">Type of layer that will be appended</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.AppendLayer(System.Int32,FinalNeuralNetwork.Interfaces.LayerType,FinalNeuralNetwork.Interfaces.ActivationFunction)">
+            <summary>
+            Append layer to the network. Biases of neurons will be created randomly
+            </summary>
+            <param name="neuronsCount">Number of neurons that layer should contain</param>
+            <param name="actv">Specific activation function</param>
+            <param name="layerType">Type of layer that will be appended</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.AppendLayer(System.Double[],FinalNeuralNetwork.Interfaces.LayerType)">
+            <summary>
+            Append layer to the network. On Forward, it will be passed after a SIGMOID activation.
+            </summary>
+            <param name="layer">Collection of neurons</param>
+            <param name="layerType">Type of layer that will be appended</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.AppendLayer(System.Collections.Generic.IEnumerable{System.Double},FinalNeuralNetwork.Interfaces.LayerType)">
+            <summary>
+            Append layer to the network. On Forward, it will be passed after a SIGMOID activation.
+            </summary>
+            <param name="layer">Collection of neurons</param>
+            <param name="layerType">Type of layer that will be appended</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.AppendLayer(System.Double[],FinalNeuralNetwork.Interfaces.LayerType,FinalNeuralNetwork.Interfaces.ActivationFunction)">
+            <summary>
+            Append layer to the network.
+            </summary>
+            <param name="layer">Collection of neurons</param>
+            <param name="actv">Specific activation function</param>
+            <param name="layerType">Type of layer that will be appended</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.AppendLayer(System.Collections.Generic.IEnumerable{System.Double},FinalNeuralNetwork.Interfaces.LayerType,FinalNeuralNetwork.Interfaces.ActivationFunction)">
+            <summary>
+            Append layer to the network.
+            </summary>
+            <param name="layer">Collection of neurons</param>
+            <param name="actv">Specific activation function</param>
+            <param name="layerType">Type of layer that will be appended</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.Build">
+            <summary>
+            This method will connect the layers and will create weighs between neurons.
+            </summary>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.Load(System.String)">
+            <summary>
+            Parse an existing network.
+            </summary>
+            <param name="filePath">Path to the file. Extension must be *.nn</param>
+            <returns>Neural Network Model based on file.</returns>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.INeuralNetwork.CreateNetwork(System.Int32)">
+            <summary>
+            Base constructor for a model. Get the Neural Network Model Object.
+            </summary>
+            <param name="layersCount">Numbers of layers that network allocates</param>
+            <returns>Model Object</returns>
+        </member>
+        <member name="T:FinalNeuralNetwork.Interfaces.IPredictable">
+            <summary>
+            Interface that contains Predict methods for a Neural Network Interface
+            </summary>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.IPredictable.Predict(System.Double[])">
+            <summary>
+            Push data through network.
+            </summary>
+            <param name="input">Data to be passed through network.</param>
+            <returns>Prediction after computational operations.</returns>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.IPredictable.Predict(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Push data through network.
+            </summary>
+            <param name="input">Data to be passed through network.</param>
+            <returns>Prediction after computational operations.</returns>
+        </member>
+        <member name="T:FinalNeuralNetwork.Interfaces.ISaveable">
+            <summary>
+            Interface that contains Save method for an object.
+            </summary>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ISaveable.Save(System.String)">
+            <summary>
+            Write on disk data from an object.
+            </summary>
+            <param name="filePath">Path to the favorite destination to save file.</param>
+        </member>
+        <member name="T:FinalNeuralNetwork.Interfaces.ITrainable">
+            <summary>
+            Interface that contains training methods for a Neural Network Interface.
+            </summary>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainable.Train(System.Double[][],System.Double[][],System.Int32,System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="epochs">Number of iterations. How many times batch will be passed through network</param>
+            <param name="learningRate">Impact of data on the network</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainable.Train(System.Double[0:,0:],System.Double[0:,0:],System.Int32,System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="epochs">Number of iterations. How many times batch will be passed through network</param>
+            <param name="learningRate">Impact of data on the network</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainable.Train(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Double}},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Double}},System.Int32,System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="epochs">Number of iterations. How many times batch will be passed through network</param>
+            <param name="learningRate">Impact of data on the network</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainable.TrainStep(System.Double[][],System.Double[][],System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="learningRate">Impact of data on the network</param>
+            <returns>Error after data processing</returns>
+        </member>
+        <member name="T:FinalNeuralNetwork.Interfaces.ITrainableGPU">
+            <summary>
+            Interface that contains training methods using GPU for a Neural Network Interface.
+            </summary>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainableGPU.TrainGPU(System.Double[][],System.Double[][],System.Int32,System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="epochs">Number of iterations. How many times batch will be passed through network</param>
+            <param name="learningRate">Impact of data on the network</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainableGPU.TrainGPU(System.Double[0:,0:],System.Double[0:,0:],System.Int32,System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="epochs">Number of iterations. How many times batch will be passed through network</param>
+            <param name="learningRate">Impact of data on the network</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainableGPU.TrainGPU(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Double}},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.Double}},System.Int32,System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <param name="epochs">Number of iterations. How many times batch will be passed through network</param>
+            <param name="learningRate">Impact of data on the network</param>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainableGPU.TrainStepGPU(System.Double[][],System.Double)">
+            <summary>
+            Start the training process of the network.
+            </summary>
+            <param name="batch">Batch of Data</param>
+            <param name="learningRate">Impact of data on the network</param>
+            <returns></returns>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainableGPU.GetOptimalGPUModel(System.Double[][],System.Double[][])">
+            <summary>
+            Automatically detect best Accelerator that your machine is able to provide.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+            <returns></returns>
+        </member>
+        <member name="M:FinalNeuralNetwork.Interfaces.ITrainableGPU.InitializeGPU(System.Double[][],System.Double[][])">
+            <summary>
+            Assembly the GPU part in the neural network.
+            </summary>
+            <param name="batch">Batch of data</param>
+            <param name="validResult">Valid result for each data in the batch</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Spiral Core</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SpiralCoreProject.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/menu.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/McuStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/genericViewStyleSheet.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="main">
+        <div class="non_mobile_layout">
+            <nav class="spiralCoreMenu_notMobile">
+                <a id="spiralCoreImg" href="/Home"></a>>
+                <div class="controls" id="controlsId">
+                    <a href="/MCUs" class="menuButton">MCUs</a>
+                    <a href="#" class="menuButton">About</a>
+                    <a href="#" class="menuButton">Get API Key</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="mobile_layout">
+            <nav class="spiralCoreMenu_mobile">
+                <img src="/images/spiral_core_logoo.png" alt="Spiral Core Logo" id="spiralCoreImg" />
+                <div class="menu-toggle" id="menuToggle">
+                    &#9776;
+                </div>
+            </nav>
+            <div class="controls" id="controlsId">
+                <a href="/MCUs" class="menuButton">MCUs</a>
+                <a href="#" class="menuButton">About</a>
+                <a href="#" class="menuButton">Get API Key</a>
+            </div>
+        </div>
+
+        <main class = "content_container" role="main">
+            @RenderBody()
+        </main>
+
+        <footer>
+            <p class="copyright">&copy; 2025 Spiral Core. All rights reserved.</p>
+        </footer>
+    </div>
+
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

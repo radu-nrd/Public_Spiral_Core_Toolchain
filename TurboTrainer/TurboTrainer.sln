@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboTrainer", "TurboTrainer\TurboTrainer.csproj", "{2E0911B0-F437-46FF-865C-D10D877830E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E0911B0-F437-46FF-865C-D10D877830E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0911B0-F437-46FF-865C-D10D877830E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0911B0-F437-46FF-865C-D10D877830E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0911B0-F437-46FF-865C-D10D877830E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4133327-381B-43CE-A676-6758A0C47658}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<SpiralCoreProject.Models.Category>
+
+@{
+    ViewData["Title"] = "MCUs";
+}
+
+
+<div class="category-grid">
+
+    @foreach(var item in Model){
+        <a class="category-card" href="/MCUs/FetchData?category=@item.CategoryName">
+            <span class="category-name">@item.CategoryName</span>
+            <p class="category-desc">@item.Description</p>
+        </a>
+    }
+</div>
